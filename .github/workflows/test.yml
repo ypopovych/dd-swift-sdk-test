@@ -43,4 +43,12 @@ jobs:
           xcodebuild test \
             -project Issue280Repro.xcodeproj \
             -scheme Issue280Repro \
-            -destination "platform=macOS"
+            -destination "platform=macOS" \
+            -resultBundlePath TestResults.xcresult
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: TestResults.xcresult
+          path: TestResults.xcresult
