@@ -1,0 +1,46 @@
+name: Test Issue 280 Repro
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: Run Tests (Xcode 26.0)
+    runs-on: macos-26
+
+    env:
+      DD_API_KEY: ${{ secrets.DD_API_KEY }}
+      DD_SITE: datad0g.com
+      DD_TEST_RUNNER: "1"
+      DD_SERVICE: issue280-repro
+      DD_ENV: ci
+      DD_CIVISIBILITY_AGENTLESS_ENABLED: "true"
+      DD_TRACE_DEBUG: "1"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Select Xcode 26.0
+        run: sudo xcode-select -s /Applications/Xcode_26.0.app/Contents/Developer
+
+      - name: Show Xcode version
+        run: xcodebuild -version
+
+      - name: Resolve Swift packages
+        run: |
+          xcodebuild -resolvePackageDependencies \
+            -project Issue280Repro.xcodeproj \
+            -scheme Issue280Repro
+
+      - name: Run tests
+        run: |
+          set -o pipefail
+          xcodebuild test \
+            -project Issue280Repro.xcodeproj \
+            -scheme Issue280Repro \
+            -destination "platform=macOS"

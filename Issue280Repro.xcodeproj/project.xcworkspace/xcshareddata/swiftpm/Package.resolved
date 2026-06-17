@@ -1,0 +1,15 @@
+{
+  "originHash" : "6bc33eba23151b65ff5fdee9891a5a9b2c54c2e454c67b6d7732844fd734d4e6",
+  "pins" : [
+    {
+      "identity" : "dd-sdk-swift-testing",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/DataDog/dd-sdk-swift-testing",
+      "state" : {
+        "revision" : "7c637715c16443e3257f9d0f0fb6f2b65746f6e8",
+        "version" : "2.7.3"
+      }
+    }
+  ],
+  "version" : 3
+}
