@@ -86,6 +86,81 @@
             value = "$(DD_TRACE_DEBUG)"
             isEnabled = "YES">
          </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "GITHUB_ACTIONS"
+            value = "$(GITHUB_ACTIONS)"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "GITHUB_BASE_REF"
+            value = "$(GITHUB_BASE_REF)"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "GITHUB_EVENT_PATH"
+            value = "$(GITHUB_EVENT_PATH)"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "GITHUB_HEAD_REF"
+            value = "$(GITHUB_HEAD_REF)"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "GITHUB_JOB"
+            value = "$(GITHUB_JOB)"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "GITHUB_REF"
+            value = "$(GITHUB_REF)"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "GITHUB_REPOSITORY"
+            value = "$(GITHUB_REPOSITORY)"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "GITHUB_RUN_ATTEMPT"
+            value = "$(GITHUB_RUN_ATTEMPT)"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "GITHUB_RUN_ID"
+            value = "$(GITHUB_RUN_ID)"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "GITHUB_RUN_NUMBER"
+            value = "$(GITHUB_RUN_NUMBER)"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "GITHUB_SERVER_URL"
+            value = "$(GITHUB_SERVER_URL)"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "GITHUB_SHA"
+            value = "$(GITHUB_SHA)"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "GITHUB_WORKFLOW"
+            value = "$(GITHUB_WORKFLOW)"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "GITHUB_WORKSPACE"
+            value = "$(GITHUB_WORKSPACE)"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "SRCROOT"
+            value = "$(SRCROOT)"
+            isEnabled = "YES">
+         </EnvironmentVariable>
       </EnvironmentVariables>
       <Testables>
          <TestableReference
