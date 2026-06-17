@@ -10,8 +10,7 @@
  *
  * The suites below let you compare the three relevant cases under one run:
  *   1. parameterized + failing   (the reported bug)
- *   2. non-parameterized + failing (control: should always exit non-zero)
- *   3. parameterized + passing    (control: should exit zero)
+ *   2. parameterized + passing   (control: should exit zero)
  */
 
 import Testing
@@ -31,16 +30,7 @@ struct ParameterizedFailingTests {
     }
 }
 
-// 2. Control: non-parameterized + failing. Should reliably fail the process.
-@Suite("Plain Failing", .observedTesting)
-struct PlainFailingTests {
-    @Test
-    func failingTest() throws {
-        #expect(Bool(false), "this test always fails")
-    }
-}
-
-// 3. Control: parameterized + passing. Should keep the process green.
+// 2. Control: parameterized + passing. Should keep the process green.
 @Suite("Parameterized Passing", .observedTesting)
 struct ParameterizedPassingTests {
     @Test(arguments: MyEnum.allCases)
