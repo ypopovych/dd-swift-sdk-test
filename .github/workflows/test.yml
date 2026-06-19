@@ -43,7 +43,7 @@ jobs:
           xcodebuild test \
             -project Issue280Repro.xcodeproj \
             -scheme Issue280Repro \
-            -destination "platform=macOS" \
+            -destination "platform=iOS Simulator,name=iPhone 16,OS=26.2" \
             -resultBundlePath TestResults.xcresult
 
       - name: Upload test results
