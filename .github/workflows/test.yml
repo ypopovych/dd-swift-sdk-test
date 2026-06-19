@@ -34,6 +34,9 @@ jobs:
       - name: Install iOS platform SDK
         run: xcodebuild -downloadPlatform iOS
 
+      - name: Install iOS 26.0 simulator runtime
+        run: xcrun simctl runtime add "iOS 26.0"
+
       - name: List available simulators
         run: xcrun simctl list runtimes
 
@@ -49,7 +52,7 @@ jobs:
           xcodebuild test \
             -project Issue280Repro.xcodeproj \
             -scheme Issue280Repro \
-            -destination "platform=iOS Simulator,name=iPhone 17,OS=26.1" \
+            -destination "platform=iOS Simulator,name=iPhone 17,OS=26.0" \
             -resultBundlePath TestResults.xcresult
 
       - name: Upload test results
