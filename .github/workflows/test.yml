@@ -25,17 +25,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Select Xcode 26.0 to install iOS 26.0 runtime
+        run: sudo xcode-select -s /Applications/Xcode_26.0.app/Contents/Developer
+
+      - name: Install iOS 26.0 platform SDK and runtime
+        run: xcodebuild -downloadPlatform iOS
+
       - name: Select Xcode 26.1.1
         run: sudo xcode-select -s /Applications/Xcode_26.1.1.app/Contents/Developer
 
       - name: Show Xcode version
         run: xcodebuild -version
 
-      - name: Install iOS platform SDK
+      - name: Install iOS 26.1 platform SDK
         run: xcodebuild -downloadPlatform iOS
-
-      - name: Install iOS 26.0 simulator runtime
-        run: xcrun simctl runtime add "iOS 26.0"
 
       - name: List available simulators
         run: xcrun simctl list runtimes
