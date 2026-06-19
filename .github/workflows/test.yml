@@ -31,6 +31,9 @@ jobs:
       - name: Show Xcode version
         run: xcodebuild -version
 
+      - name: Install iOS platform SDK
+        run: xcodebuild -downloadPlatform iOS
+
       - name: List available simulators
         run: xcrun simctl list runtimes
 
