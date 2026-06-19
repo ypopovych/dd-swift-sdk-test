@@ -31,6 +31,9 @@ jobs:
       - name: Show Xcode version
         run: xcodebuild -version
 
+      - name: List available simulators
+        run: xcrun simctl list runtimes
+
       - name: Resolve Swift packages
         run: |
           xcodebuild -resolvePackageDependencies \
@@ -43,7 +46,7 @@ jobs:
           xcodebuild test \
             -project Issue280Repro.xcodeproj \
             -scheme Issue280Repro \
-            -destination "platform=iOS Simulator,name=iPhone 16,OS=26.2" \
+            -destination "platform=iOS Simulator,name=iPhone 16" \
             -resultBundlePath TestResults.xcresult
 
       - name: Upload test results
